@@ -1,0 +1,10 @@
+.goTop {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    }
+.goTopBtn {
+    background-color: transparent;
+    cursor: pointer;
+    z-index: 1000;
+}

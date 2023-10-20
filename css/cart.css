@@ -1,0 +1,160 @@
+/* .container10 {
+   z-index: 1000;
+   align-items: center;
+   width: 300%;
+   height: 200%;
+   background-color: #f7f0f0;
+   
+} */
+.close1 {
+    position: absolute;
+    right: -45rem;
+    bottom: 33rem;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+    z-index: 1000;
+    
+}
+
+.close1:hover,
+.close1:focus {
+    color: red;
+    cursor: pointer;
+}
+
+
+.cartContent {
+    display: none;
+    position: fixed;
+    width: 60%;
+    /* height: 100%; */
+    margin: 0px auto;
+    overflow: visible;
+    padding-top: 60px;
+    top: 20rem;
+}
+
+.cartContent ul,
+ol {
+    list-style: none;
+    align-items: center;
+    margin: 15px;
+    padding: auto;
+    background-color: transparent;
+}
+
+.cartContent li {
+    margin: 5px;
+    width: 50%;
+    position: relative;
+    left: 5rem;
+
+}
+
+.cartContent div ul {
+    display: flex;
+}
+
+.cartList {
+    background-color: #ffffff;
+    position: relative;
+    border: 1px solid chocolate;
+    width: 100%;
+    height: 20rem;
+    overflow: visible;
+    /* padding: 20px; */
+    bottom: 15rem;
+    left: 45rem;
+}
+
+.cartList img {
+    width: 8rem;
+    height: 8rem;
+    position: relative;
+    left: 0.5rem;
+
+}
+
+.cartList ul {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    position: relative;
+    right: 5rem;
+}
+
+.cartList ul li input[name="price"] {
+    /* border: 1px solid; */
+    background: transparent;
+    width: 60px;
+    /* color: #000000; */
+    text-align: center;
+    /* z-index: 1000; */
+    
+}
+
+.cartList ul li input[name="amount"] {
+    width: 50px;
+    text-align: center;
+    /* border: 1px solid #ffffff; */
+    border-left: none;
+    border-right: none;
+    height: 21px;
+    background-color: transparent;
+}
+
+.cartList ul li input[name="minus"],
+.cartList ul li input[name="plus"] {
+    height: 25px;
+    border: 1px #292929 solid;
+    background-color: rgba(255, 255, 255, 0.151);
+    width: 25px;
+    text-align: center;
+}
+
+.cartList ul li input[name="minus"],
+.cartList ul li input[name="plus"]:hover {
+    cursor: pointer;
+}
+
+.cartList ol li span {
+    display: inline-block;
+    /* float: right; */
+    width: 50px;
+    height: 30px;
+    line-height: 35px;
+    font-size: 14px;
+    /* font-family: "微软雅黑"; */
+    background: #000000;
+    color: #ffffff;
+    text-align: center;
+    /*margin-top: 5px;*/
+    /*margin-right: 15px;*/
+    cursor: pointer;
+    font-weight: bold;
+    position: relative;
+    bottom: 3.5rem;
+    left: 0rem;
+
+
+}
+
+.cartList ol {
+    float: right;
+    clear: both;
+    margin-top: 0px;
+    position: absolute;
+    right: 5rem;
+    bottom: 2rem;
+}
+
+.cartList .cartListHeader {
+    position: relative;
+    left: 2rem;
+
+}
+.cartContent li p:hover {
+    cursor: pointer;
+}

@@ -1,0 +1,102 @@
+* {
+    box-sizing: border-box;
+}
+
+
+/* Center website */
+.main {
+    max-width: 1000px;
+    margin: auto;
+}
+
+h4,
+h4~p {
+    font-size: 17px;
+    word-break: break-all;
+    position: relative;
+    left: 3rem;
+    font-weight: 900;
+    
+}
+
+
+.row2 {
+    margin: 8px 10px;
+}
+
+/* Add padding BETWEEN each column (if you want) */
+.row2,
+.row2>.column {
+    padding: 100px;
+}
+
+/* Create three equal columns that floats next to each other */
+.column2 {
+    float: left;
+    /* margin: 0; */
+    width: 25%;
+    display: none;
+    /* Hide columns by default */
+}
+
+
+
+/* Clear floats after rows */
+.row2:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Content */
+.content {
+    background-color: rgb(255, 255, 255);
+    padding: 0px;
+    margin: 10px;
+    position: relative;
+    bottom: 2rem;
+}
+.content img {
+    height: 20rem;
+    border: 5px solid rgb(0, 0, 0);
+    position: relative;
+    left: 2.5rem;
+}
+.content img:hover {
+    transform:scale(1.02,1.02);
+    transition:all 0.1s ease 0s;
+   
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+    display: block;
+}
+
+/* Style the buttons */
+.btn {
+    border: 1px solid aquamarine;
+    outline: none;
+    /* padding: px 16px; */
+    width:10rem;
+    height: 3rem;
+    position: relative;
+    top: 1rem;
+    left: 10rem;
+    background-color: white;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+/* Add a grey background color on mouse-over */
+.btn:hover {
+    background-color: #ddd;
+}
+
+/* Add a dark background color to the active button */
+.btn.active {
+    background-color: #3da3707e;
+    opacity: 1;
+    color: white;
+}
