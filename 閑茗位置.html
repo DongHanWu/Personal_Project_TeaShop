@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>閑茗茶業</title>
+    <link rel="icon" href="./logo/greentea.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- <link rel="stylesheet" href="./slide.css"> -->
+    <!-- <link rel="stylesheet" href="./理念介紹.css"> -->
+    <link rel="stylesheet" href="./css/login_buttonstyle.css">
+    <link rel="stylesheet" href="./css/contact_form.css">
+    <link rel="stylesheet" href="./css/signup.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
+    <style>
+        /* 導覽列 */
+        * {
+            box-sizing: border-box;
+        }
+
+
+        html,
+        body {
+            margin: 0 auto;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+
+
+        }
+
+        #logo {
+            width: 280px;
+            top: -40px;
+            position: relative;
+            float: left;
+            z-index: 1000;
+        }
+
+        .NavigationBar {
+            background-color: #d6d4d4d0;
+            opacity: 1;
+            /* overflow: hidden ; */
+            /* overflow: visible; */
+            height: 70px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+
+        }
+
+        nav ul {
+            background-color: #d6d4d4d0;
+            opacity: 0.9;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            /* height: 70px; */
+            align-items: center;
+            width: 100%;
+        }
+
+        .float-nav {
+            position: relative;
+            height: 70px;
+            /* left: 12%; */
+            /* float: right; */
+            /* margin-right: 0px; */
+            width: 100%;
+        }
+
+        .float-nav li {
+            /* float: left; */
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            align-items: center;
+            height: 70px;
+        }
+
+        .float-nav li button {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            align-items: center;
+            height: 70px;
+        }
+
+        .NavigationBar a {
+            color: inherit;
+            display: inline-block;
+            text-align: center;
+            font-size: 1.2rem;
+            padding: 25px;
+            text-decoration: none;
+        }
+
+        nav li:hover {
+            background-color: rgb(26, 26, 26);
+            color: azure;
+        }
+
+        nav li button:hover {
+            background-color: rgb(26, 26, 26);
+            color: azure;
+        }
+
+        .right-align {
+            float: right;
+        }
+
+        .dropdown-wrapper {
+            position: relative;
+        }
+
+
+
+        .dropdown {
+            display: flex;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #ffffffd0;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
+            visibility: hidden;
+            opacity: 0;
+            flex-direction: column;
+            transition: opacity 0.3s;
+            /* width: auto; */
+            width: 165px;
+            max-height: 400px;
+            padding: 0;
+            font-weight: 900;
+
+        }
+
+        .dropdown li {
+            width: 100%;
+            text-align: center;
+        }
+
+        .dropdown-wrapper:hover .dropdown {
+            visibility: visible;
+            opacity: 1;
+            height: auto;
+
+        }
+
+        .dropdown a {
+            color: black;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            padding: 22px 0px 22px 0px;
+
+        }
+
+        .dropdown a:hover {
+            background-color: rgb(200, 200, 200);
+            color: azure;
+            height: auto;
+
+        }
+
+        .divider__line {
+            position: relative;
+            height: 6px;
+        }
+
+        .divider__line:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: calc(50% - 5px);
+            width: 20px;
+            height: 2px;
+            background-color: #2bc752;
+        }
+
+        .divider__line:after {
+            content: "";
+            position: absolute;
+            top: 4px;
+            right: calc(50% - 5px);
+            width: 20px;
+            height: 2px;
+            background-color: #2bc752;
+        }
+
+        ul.icon {
+            display: flex;
+            padding: 10px;
+            list-style: none;
+        }
+
+        ul.icon img {
+            margin: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="logo">
+
+
+        <nav class="NavigationBar">
+            <div>
+                <img src="./logo/閒茗logo.png" alt="閑茗logo" id="logo">
+            </div>
+
+            <div>
+                <ul class="float-nav">
+                    <li><a href="./首頁.html" style="font-weight: 900;" id="first"><i class="fa fa-fw fa-home"></i>首頁</a>
+                    </li>
+                    <li><a href="#" style="font-weight: 900 ;"><i
+                                class="fa-solid fa-person-circle-question"></i>關於閑茗</a></li>
+                    <li class="dropdown-wrapper"><a href="#" style="font-weight: 900 ;">
+                            <i class="fa-solid fa-shop"></i>所有商品<i class="fa fa-caret-down"></i>
+                        </a>
+                        <ul class="dropdown">
+                            <li> <a href="./所有商品.html">所有商品</a></li>
+                            <li> <a href="./高山烏龍系列.html">高山烏龍系列</a></li>
+                            <li> <a href="./熟香烏龍系列.html">熟香烏龍系列</a></li>
+                            <li> <a href="./蜜香紅茶系列.html">蜜香紅茶系列</a></li>
+                            <li> <a href="./普洱茶系列.html">普洱茶系列</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li><a href="./飲料品牌.html" style="font-weight: 900 ;"><i class="fa-solid fa-glass-water"></i>飲料品牌</a>
+                    </li>
+                    <li><a href="./茶百科.html" style="font-weight: 900 ;"><i class="fa-solid fa-seedling"></i>茶百科</a></li>
+                    <li><a href="./閑茗位置.html" style="font-weight: 900 ;"><i
+                                class="fa-solid fa-location-dot"></i>閑茗位置</a></li>
+                    <li class="right-align">
+                        <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">
+                            <a href="#" style="font-weight: 900 ;" id="contact"><i class="fa fa-fw fa-envelope"></i>
+                                聯絡我們</a>
+                    </li>
+                    </button>
+
+                    <div id="id02" class="modal2">
+                        <div class="contactForm" style="width: 80%;" id="contactForm">
+                            <form class="modal2-content animate" method="post" id="modal2-content">
+                                <div class="imgcontainer2">
+                                    <span onclick="document.getElementById('id02').style.display='none'" class="close2"
+                                        title="Close Modal">&times;</span>
+
+                                </div>
+                                <label for="fname" style="font-weight: 900;">First Name</label>
+                                <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+                                <label for="lname" style="font-weight: 900;">Last Name</label>
+                                <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+                                <label for="country" style="font-weight: 900;">Country</label>
+                                <select id="country" name="country">
+                                    <option value="Taiwan">Taiwan</option>
+                                    <option value="China">China</option>
+                                    <option value="Japan">Japan</option>
+                                    <option value="USA">USA</option>
+                                    <option value="Canada">Canada</option>
+                                    <option value="Australia">Australia</option>
+                                    <option value="England">England</option>
+                                    <option value="Germany">Germany</option>
+                                </select>
+                                <label for="mail" style="font-weight: 900;">email</label>
+                                <input type="email" name="email" id="email">
+
+                                <label for="subject" style="font-weight: 900;">Tell us</label>
+                                <textarea id="subject" name="subject" placeholder="Write something.."
+                                    style="height:200px"></textarea>
+
+                                <input type="submit" value="Submit" id="submit1">
+
+                            </form>
+                        </div>
+
+                    </div>
+
+                    <li class="right-align" style="font-weight: 900 ;">
+                        <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">
+                            <a href="#" style="font-weight: 900 ;"><i class="fa fa-fw fa-user"></i>登入</a>
+                    </li>
+                    </button>
+
+                    <div id="id01" class="modal">
+                        <form class="modal-content animate" method="post">
+                            <div class="imgcontainer">
+                                <span onclick="document.getElementById('id01').style.display='none'" class="close"
+                                    title="Close Modal">&times;</span>
+                                <img src="./logo/user-interface.png" alt="Avatar" class="avatar">
+                            </div>
+
+                            <div class="container3">
+                                <label for="uname" style="font-weight: 900;font-size: 18px;"><b>Username</b></label>
+                                <input type="text" placeholder="Enter Username" name="uname" required>
+
+                                <label for="psw" style="font-weight: 900;font-size: 18px;"><b>Password</b></label>
+                                <input type="password" placeholder="Enter Password" name="psw" required>
+
+                                <button type="submit" style="font-size: 15px; font-weight: 900;">Login</button>
+                                <label>
+                                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                                </label>
+                                <button onclick="document.getElementById('id03').style.display='block'"
+                                    style="width:auto;" class="signupbtn">Sign Up</button>
+                                <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                                    class="cancelbtn">Cancel</button>
+                                <span class="psw"> <a href="#">password?</a></span>
+                            </div>
+
+                            <div id="id03" class="modal4">
+                                <span onclick="document.getElementById('id03').style.display='none'" class="close3"
+                                    title="Close Modal">&times;</span>
+                                <form class="modal4-content animate" method="post">
+                                    <div class="container4">
+                                        <h1>Sign Up</h1>
+                                        <p style="font-size: 20px;">Create your account.</p>
+                                        <hr>
+                                        <label for="email"
+                                            style="font-weight: 900;font-size: 18px;"><b>Email</b></label>
+                                        <input type="text" placeholder="Enter Email" name="email" required>
+
+                                        <label for="psw"
+                                            style="font-weight: 900;font-size: 18px;"><b>Password</b></label>
+                                        <input type="password" placeholder="Enter Password" name="psw" required>
+
+                                        <label for="psw-repeat" style="font-weight: 900;font-size: 18px;"><b>Repeat
+                                                Password</b></label>
+                                        <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+
+                                        <label>
+                                            <input type="checkbox" checked="checked" name="remember"
+                                                style="margin-bottom:15px"> Remember me
+                                        </label>
+
+                                        <p>By creating an account you agree to our <a href="#"
+                                                style="color:dodgerblue;font-size: 16px;font-weight: 900;">Terms &
+                                                Privacy</a>.</p>
+
+                                        <div class="clearfix">
+                                            <button type="button"
+                                                onclick="document.getElementById('id03').style.display='none'"
+                                                class="cancelbtn3">Cancel</button>
+                                            <button type="submit" class="signupbtn3">Sign Up</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                    </div>
+                    </form>
+            </div>
+            </ul>
+    </div>
+    </nav>
+
+    </div>
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1287.1939503709386!2d120.67440590470515!3d24.145968022576707!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d72f9db5cd7%3A0x9fe8dc55525efb4!2zNDA05Y-w5Lit5biC5YyX5Y2A5Y-w54Gj5aSn6YGT5LiA5q61NjEz5be3NuiZnw!5e0!3m2!1szh-TW!2stw!4v1690265853951!5m2!1szh-TW!2stw"
+        width="70%" height="60%" style="border:0;position: relative; margin: 10px; left: 10%; top: 15%;"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    <br><br><br><br>
+    <br><br><br><br>
+    <br><br><br><br>
+    <div style="display: flex;position: relative;  margin: 10px; left: 10%;">
+
+        <h2><span style="color: #2bc752;"> ▋</span> 閑茗地址 </h2>
+        <img src="./背景圖/閑茗.png" style="width: 20%;">
+    </div>
+    <p style="font-size: 18px; position: relative; margin: 10px; left: 10%;">404&nbsp;台中市北區台灣大道一段613巷6號</p>
+    <br>
+    <div style="position: relative;  margin: 10px; left: 10%;">
+        <h2><span style="color: #2bc752; "> ▋</span> 聯繫電話 </h2>
+        <p style="font-size: 18px;">04-1234-5678</p>
+    </div>
+
+    <br>
+    <div style="position: relative;  margin: 10px; left: 10%;">
+        <h2><span style="color: #2bc752; "> ▋</span> 營業時間 </h2>
+        <p style="font-size: 18px;">周一到周日00:00-23:59</p>
+    </div>
+
+    <br><br><br><br>
+
+    <div>
+        <div>
+            <img src="./背景圖/tea banner2.png"
+                style="width: 100%; height: 100%; opacity: 0.5;position: relative;vertical-align:middle;">
+        </div>
+        <div>
+
+        </div>
+        <div>
+            <div
+                style="float: left; position: relative; bottom: 600px;left: 300px; width: 60%; opacity: 0.6; display: flex;">
+                <!-- <img src="./背景圖/social/verticalline.png" height="200px"> -->
+                <img src="./背景圖/字體.png" width="100%">
+                <img src="./logo/閒茗logo.png" width="40%" height="40%"
+                    style="position: relative;right: 450px; bottom: 30px;">
+            </div>
+
+
+
+            <div class="divider__line" style="bottom: 500px;float: right;left: -200px;">
+
+                <p style="font-size: 20px;font-weight: 900;position: relative;left: 35%;"">快速連結</p>
+                <ul class=" icon">
+                    <a href="#">
+                        <li><img src="./背景圖/social/facebook.png" alt="FB" width="30px"></li>
+                    </a>
+                    <a href="">
+                        <li><img src="./背景圖/social/instagram.png" alt="FB" width="30px"></li>
+                    </a>
+                    <a href="">
+                        <li><img src="./背景圖/social/line.png" alt="FB" width="30px"></li>
+                    </a>
+                    <a href="">
+                        <li><img src="./背景圖/social/youtube.png" alt="FB" width="30px"></li>
+                    </a>
+
+                    </ul>
+            </div>
+            <div class="divider__line" style="bottom: 500px;float: right;left: -20%;">
+                <p style="font-size: 20px;font-weight: 900;position: relative;left: 42%;">歡迎來電</p>
+                <div style="display: flex;position: relative; left: 80px;">
+                    <img src="./背景圖/phone.gif" width="15%" style="position: relative; left: 5%;">
+                    <ul>
+                        <li style="list-style: none;font-size: 20px; font-weight: 900; color: rgb(5, 5, 51)">+886
+                            123-456-789</li>
+                        <li style="list-style: none;font-size: 20px; font-weight: 900; color: rgb(5, 5, 51)">+886
+                            987-654-321</li>
+                    </ul>
+
+
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script>
+
+        // for login button
+        // Get the modal
+        var modal = document.getElementById('id01');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // for contactForm
+        // Get the modal
+        var modal2 = document.getElementById('id02');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal2) {
+                modal2.style.display = "none";
+            }
+        }
+        // for signup button
+        // Get the modal
+        var modal4 = document.getElementById('id03');
+        var model = document.getElementById('id01')
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+
+            if (event.target == modal4) {
+                modal4.style.display = "none";
+
+            }
+
+        }
+        window.onclick = function (event) {
+            if (event.target == modal4) {
+                modal.style.display = 'none';
+            }
+        }
+
+    </script>
+</body>
+
+</html>

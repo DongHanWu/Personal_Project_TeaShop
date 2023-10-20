@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shoppingCart</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <style>
+        .cartContent {
+            /* display: none; */
+            position: fixed;
+            width: 50%;
+            margin: 0 auto;
+            overflow: auto;
+            padding-top: 60px;
+        }
+
+        ul,
+        ol {
+            list-style: none;
+            align-items: center;
+            margin: 50px;
+        }
+
+
+        li {
+            margin: 20px;
+            width: 80%;
+
+        }
+
+        div ul {
+            display: flex;
+        }
+
+        .cartList ul {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .cartList ul li input[name="price"] {
+            border: none;
+            background: transparent;
+            width: 30px;
+            text-align: center;
+        }
+
+        .cartList ul li input[name="amount"] {
+            width: 30px;
+            text-align: center;
+            border: 1px solid #ffffff;
+            border-left: none;
+            border-right: none;
+            height: 21px;
+        }
+
+        .cartList ul li input[name="minus"],
+        .cartList ul li input[name="plus"] {
+            height: 25px;
+            border: 1px #292929 solid;
+            background-color: rgba(65, 196, 60, 0.151);
+            width: 25px;
+            text-align: center;
+        }
+        .cartList ul li input[name="minus"],
+        .cartList ul li input[name="plus"]:hover{
+            cursor: pointer;
+        }
+
+        .cartList ol li span {
+            display: inline-block;
+            /* float: right; */
+            width: 60px;
+            height: 35px;
+            line-height: 35px;
+            font-size: 14px;
+            /* font-family: "微软雅黑"; */
+            background: #000000;
+            color: #ffffff;
+            text-align: center;
+            /*margin-top: 5px;*/
+            /*margin-right: 15px;*/
+            cursor: pointer;
+            font-weight: bold;
+            
+        }
+
+        .cartList ol {
+            float: right;
+            clear: both;
+            margin-top: 40px;
+            position: relative;
+            right:2rem ;
+        }
+
+    </style>
+
+
+</head>
+
+
+
+<body>
+    <div class="cartContent" id="cart">
+        <div class="cartlogo">
+            <span onclick="document.getElementById('cart').style.display='none'" class="close"
+                title="Close Cart">&times;</span>
+        </div>
+        <div class="cartList">
+            <ul>
+                <li>商品名稱</li>
+                <li>商品照片</li>
+                <li>單價 (元)</li>
+                <li>數量</li>
+                <li>金額 (元)</li>
+                <li>操作</li>
+            </ul>
+            <ul style="display: flex;justify-content: space-between;align-items: center;" id="first">
+                <li>《杉林溪烏龍茶》</li>
+                <li><img src="./photo/商品/商品頁/高山烏龍系列/杉林溪烏龍茶.jpg" width="100rem" height="100rem"></li>
+                <li>NT$ <input type="text" value="600" name="price"></li>
+                <li><input type="button" name="minus" value="-" onclick="minus(0)"><input type="text" name="amount"
+                        value="1"><input type="button" name="plus" value="+" onclick="plus(0)"></li>
+                <li id="price0">NT$ 600</li>
+                <li>
+                    <p onclick="delete1()">刪除</p>
+                </li>
+            </ul>
+            <ol>
+                <li id="totalPrice">&nbsp;</li>
+                <li><span>結算</span></li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        // 減數量
+        var minus = (index) => {
+
+            // 取得當前數量的數值
+            var amounts = $('[name=amount]');;
+            // 得到第一個amount element的value屬性值
+            var count = parseInt(amounts[index].value)
+            if (count <= 1) {
+                alert('不可以再減!我沒了')
+            } else {
+                // 得到第一個amount element的value
+                var count = parseInt(amounts[index].value) - 1 // 數量-1
+                // 將count數值綁定到數量的文本框
+                amounts[index].value = count;
+
+                var prices = $('[name=price]');
+                var price = parseInt(prices.value);
+                // var price = parseInt(prices[index].value);
+                var totalmoney = price * count;
+
+                $('#totalPrice').text(`NT$ ${totalmoney}`);
+                total();
+            }
+
+
+        }
+        // 加數量
+        var plus = (index) => {
+            // 取得當前數量的數值
+            var amounts = $('[name=amount]');
+            // 得到第一個amount element的value
+            var count = parseInt(amounts[index].value) + 1 // 數量+1
+            // 將count數值綁定到數量的文本框
+            amounts[index].value = count;
+            var prices = $('[name=price]');
+            var price = parseInt(prices.value);
+            var totalmoney = price * count;
+            $('#totalPrice').text(`NT$ ${totalmoney}`);
+            total();
+        }
+
+
+        // 總金額
+        var total = () => {
+            // 得到所有數量
+            var counts = $('[name=amount]');
+            // 得到所有單價
+            var prices = $('[name=price]');;
+            var sumMoney = 0;
+            for (var i = 0; i < counts.length; i++) {
+                sumMoney += parseInt(prices[i].value) * parseInt(counts[i].value)
+            }
+            // 總金額放到指定元素內
+            document.getElementById("totalPrice").innerHTML = "NT$" + sumMoney;
+        }
+        total();
+        // 刪除
+        var delete1 = () => {
+            if (confirm('確定要刪除嗎?')) {
+                var del = $('#first');
+                del.remove()
+                alert('刪除成功!');
+            }
+        }
+        // for cart
+            // Get the modal
+            var cart = document.getElementById('cart');
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == cart) {
+                    cart.style.display = "none";
+                }
+            }
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>閑茗茶業</title>
+    <link rel="icon" href="./logo/greentea.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/slide.css">
+    <link rel="stylesheet" href="./css/理念介紹.css">
+    <link rel="stylesheet" href="./css/login_buttonstyle.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <link rel="stylesheet" href="./css/contact_form.css">
+    <link rel="stylesheet" href="./css/navigationbar.css">
+
+</head>
+
+<body>
+
+    <body>
+
+
+        <div class="logo">
+
+
+            <nav class="NavigationBar">
+                <div>
+                    <img src="./logo/閒茗logo.png" alt="閑茗logo" id="logo">
+                </div>
+
+                <div>
+                    <ul class="float-nav">
+                        <li><a href="#" style="font-weight: 900;" id="first"><i class="fa fa-fw fa-home"></i>首頁</a></li>
+                        <li><a href="#" style="font-weight: 900 ;"><i
+                                    class="fa-solid fa-person-circle-question"></i>關於閑茗</a></li>
+                        <li class="dropdown-wrapper"><a href="#" style="font-weight: 900 ;">
+                                <i class="fa-solid fa-shop"></i>所有商品<i class="fa fa-caret-down"></i>
+                            </a>
+                            <ul class="dropdown">
+                                <li><a href="#">link1</a></li>
+                                <li> <a href="#">link2</a></li>
+                                <li> <a href="#">link3</a></li>
+                            </ul>
+                        </li>
+
+
+                        <li><a href="#" style="font-weight: 900 ;"><i class="fa-solid fa-glass-water"></i>飲料品牌</a></li>
+                        <li><a href="#" style="font-weight: 900 ;"><i class="fa-solid fa-location-dot"></i>閑茗位置</a></li>
+                        <li class="right-align"><a href="#" style="font-weight: 900 ;" id="contact"><i
+                                    class="fa fa-fw fa-envelope"></i> 聯絡我們</a></li>
+
+                        <li class="right-align" style="font-weight: 900 ;">
+                            <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">
+                                <a href="#" style="font-weight: 900 ;"><i class="fa fa-fw fa-user"></i>登入</a>
+                        </li>
+                        </button>
+
+                        <div id="id01" class="modal">
+
+                            <form class="modal-content animate" method="post">
+                                <div class="imgcontainer">
+                                    <span onclick="document.getElementById('id01').style.display='none'" class="close"
+                                        title="Close Modal">&times;</span>
+                                    <img src="./logo/user-interface.png" alt="Avatar" class="avatar">
+                                </div>
+
+                                <div class="container3">
+                                    <label for="uname" style="font-weight: 900;"><b>Username</b></label>
+                                    <input type="text" placeholder="Enter Username" name="uname" required>
+
+                                    <label for="psw" style="font-weight: 900;"><b>Password</b></label>
+                                    <input type="password" placeholder="Enter Password" name="psw" required>
+
+                                    <button type="submit" style="font-size: 15px; font-weight: 900;">Login</button>
+                                    <label>
+                                        <input type="checkbox" checked="checked" name="remember"> Remember me
+                                    </label>
+                                </div>
+
+                                <div class="container3" style="background-color:#f1f1f1">
+                                    <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                                        class="cancelbtn">Cancel</button>
+                                    <span class="psw" style="position: relative; bottom: 35px;"> <a
+                                            href="#">password?</a></span>
+                                </div>
+                            </form>
+                        </div>
+                    </ul>
+                </div>
+            </nav>
+
+        </div>
+
+
+        <div class="contactForm" id="contactForm" style="position: relative;width: 30%;float: right;top: 200px;">
+            <form>
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+                <label for="country">Country</label>
+                <select id="country" name="country">
+                    <option value="Taiwan">Taiwan</option>
+                    <option value="China">China</option>
+                    <option value="Japan">Japan</option>
+                    <option value="USA">USA</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Australia">Australia</option>
+                    <option value="England">England</option>
+                    <option value="Germany">Germany</option>
+                </select>
+
+                <label for="subject">Subject</label>
+                <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+                <input type="submit" value="Submit">
+
+            </form>
+        </div>
+    </body>
+
+</html>
